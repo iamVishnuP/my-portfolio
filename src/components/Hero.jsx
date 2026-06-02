@@ -188,7 +188,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full p-[2px] bg-gradient-to-tr from-[#00f2fe] via-transparent to-[#7f00ff] shadow-2xl overflow-hidden z-10 select-none">
               <div className="w-full h-full bg-[#070707] rounded-full overflow-hidden flex items-center justify-center">
                 <img
-                  src="images/USER.png"
+                  src="/vishnu_og.png"
                   alt="Vishnu P Portrait"
                   className="w-full h-full object-cover scale-[1.02] hover:scale-[1.1] transition-transform duration-700 ease-out"
                   onError={(e) => {
