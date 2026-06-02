@@ -34,3 +34,7 @@ out/
 *.njsproj
 *.sln
 *.sw?
+
+# Assets not tracked in Git
+images/
+resume/
