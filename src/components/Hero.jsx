@@ -4,9 +4,7 @@ import { Github, Linkedin, Mail, ArrowRight, MousePointer, Sparkles } from 'luci
 
 export default function Hero() {
   const roles = [
-    "MERN Stack Specialist",
     "Full Stack Developer",
-    "Junior Software Engineer",
     "Computer Science Graduate"
   ];
 

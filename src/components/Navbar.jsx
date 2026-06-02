@@ -69,21 +69,8 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         
-        {/* Branding Logo */}
-        <a 
-          href="#home" 
-          onClick={(e) => scrollToSection(e, '#home')}
-          className="flex items-center gap-2.5 font-display font-extrabold text-xl tracking-tight text-white group"
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#00f2fe] to-[#7f00ff] p-[1px] transition-transform duration-300 group-hover:rotate-6">
-            <div className="w-full h-full bg-[#050505] rounded-[7px] flex items-center justify-center">
-              <Terminal size={15} className="text-[#00f2fe] transition-colors group-hover:text-white" />
-            </div>
-          </div>
-          <span className="bg-gradient-to-r from-white to-[#d1d5db] bg-clip-text text-transparent group-hover:to-[#00f2fe] transition-colors">
-            Vishnu P
-          </span>
-        </a>
+        {/* Spacer to maintain centered alignment of nav links */}
+        <div className="w-8 h-8" />
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
