@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00f2fe;
+  --color-secondary: #7f00ff;
+  --color-accent: #4facfe;
+  --color-darkbg: #050505;
+  --color-cardbg: rgba(255, 255, 255, 0.03);
+  --color-borderglow: rgba(0, 242, 254, 0.15);
+  
+  --font-display: "Outfit", "Sora", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --animate-float-slow: float-slow 12s ease-in-out infinite;
+  --animate-float-medium: float-medium 8s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite;
+  
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-25px) scale(1.05); }
+  }
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-15px) translateX(10px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(1.15); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 242, 254, 0.05); }
+    50% { box-shadow: 0 0 25px rgba(127, 0, 255, 0.4), inset 0 0 15px rgba(127, 0, 255, 0.15); }
+  }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f2fe, #7f00ff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7f00ff, #00f2fe);
+}
+
+/* Base Body Styles */
+body {
+  background-color: #050505;
+  color: #f3f4f6;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor to enable our high-performance GSAP custom cursor */
+}
+
+/* For mobile devices, enable default cursor for accessibility if touch is detected */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(0, 242, 254, 0.3);
+  color: #ffffff;
+}
+
+/* Typography Headings utility */
+.heading-display {
+  font-family: "Outfit", "Sora", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(0, 242, 254, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(0, 242, 254, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Background Grid Overlay */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Glow effects */
+.glow-cyan {
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.5));
+}
+
+.glow-purple {
+  filter: drop-shadow(0 0 8px rgba(127, 0, 255, 0.5));
+}
+
+.glow-card {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+
+/* Custom horizontal timeline line tracing classes */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, #00f2fe, #7f00ff, #00f2fe);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+    transform: none;
+  }
+}
+
+/* Typewriter blinking cursor */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 0.8s step-end infinite;
+  color: #00f2fe;
+}
+
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: #00f2fe }
+}
